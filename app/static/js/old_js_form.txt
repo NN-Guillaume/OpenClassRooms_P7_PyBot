@@ -1,0 +1,51 @@
+var fd = new FormData(); // création d'un formulaire vide
+var test_formular = document.getElementById('test_formular'); // js va chercher le form html
+var fd = new FormData(test_formular); // le nouveau form instancié correspond au form html ET je stocke l'info dans var "fd"
+//fd.append("name", "Saverne"); //pour remplir le formulaire
+console.log(fd);
+$("#submit").click(function(){
+     
+    $.ajax({
+       url : '/process',
+       type : 'POST', // Le type de la requête HTTP, ici devenu POST
+       data : 'query=' + fd, // On fait passer nos variables, exactement comme en GET, au script more_com.php
+       dataType : 'html'
+    });
+   
+});
+
+
+
+
+
+
+$(document).ready(function() {
+
+	$('form').on('submit', function(event) {
+
+		$.ajax({
+			data : {
+				research : $('#researchInput').val()
+			},
+			type : 'POST',
+			url : '/process'
+		})
+		.done(function(data) {
+
+			console.log(data);
+			if (data.error) {
+				$('#errorAlert').text(data.error).show();
+				$('#successAlert').hide();
+			}
+			else {
+				$('#successAlert').text(data.name).show();
+				$('#errorAlert').hide();
+			}
+
+		});
+
+		event.preventDefault();
+
+	});
+
+});

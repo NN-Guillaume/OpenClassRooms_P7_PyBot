@@ -1,0 +1,145 @@
+@font-face
+{
+    font-family: customFont;
+    src: url(../tfsFont/Transformers\ Movie.ttf);
+}
+
+html
+{
+    height: 100%;
+}
+
+#header
+{
+    position: fixed;
+}
+
+img
+{
+    margin-top: 50px;
+    margin-left: 25px;
+    vertical-align: middle;
+}
+
+h1
+{
+    margin-left: 90px;
+    font-size: 70px;
+    vertical-align: middle;
+    display: inline;
+}
+
+body
+{
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    background-image: url("../images/barricade.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#section
+{
+    margin-top: 380px;
+}
+
+.map
+{
+    width: 500px;
+    height: 400px;
+    margin-left: 0px;
+}
+
+.bot
+{
+    padding: 10px;
+    vertical-align:top;
+    width: 700px;
+    height: 180;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 2px solid  #0000ff;
+    background-color: #b3b3ff;
+    opacity: 0.80;
+}
+
+.wiki
+{
+    padding: 10px;
+    vertical-align:top;
+    width: 700px;
+    height: 180;
+    margin-top: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 2px solid  #ff0000;
+    background-color: #ffb3b3;
+    opacity: 0.80;
+}
+
+footer
+{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*height: 40px;*/
+    width: 100%;
+    background-image: url(../images/tape.png)
+}
+
+.textbox
+{
+    display: block;
+    float: left;
+    padding: 20px;
+    height: 15px;
+    width: 400px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+
+input{
+    padding: 10px;
+}
+
+footer button
+{
+    display: block;
+    background:cornflowerblue;
+    color: black;
+    border-radius: 3px;
+    box-shadow: 0 3px 0 darkblue;
+    height: 40px;
+    cursor: pointer;
+}
+
+footer button:hover
+{
+    background: greenyellow;
+    box-shadow: 0 3px 0 green;
+}
+
+#loading
+{
+    position: fixed;
+    display: none;
+    float: left;
+    size: 800px;
+}
+
+#loading
+{
+    display: none;
+}
+
+* {
+    font-family: customFont;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
