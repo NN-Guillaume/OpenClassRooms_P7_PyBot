@@ -1,12 +1,3 @@
-import os
+# config file
 
-key_value = 'AIzaSyDf-8PO-M4h0cgIXw1dGZ4NCt1xVUWvFbY'
-
-"""
-if os.environ.get('GOOGLE_KEY') is None:
-    key_value = 'AIzaSyDf-8PO-M4h0cgIXw1dGZ4NCt1xVUWvFbY'
-else:
-    key_value = os.environ['GOOGLE_KEY']
-"""
-
-#   'AIzaSyDf-8PO-M4h0cgIXw1dGZ4NCt1xVUWvFbY'
+key_value = 'enter_your_key_here'
