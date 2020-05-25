@@ -1,3 +1,12 @@
+#Specific to the project
+*.pyc
+__pycache__
+env/
+app.db
+fbapp/tests/*.db
+geckodriver.log
+.cache/
+
 # Editors
 .vscode/
 .idea/
