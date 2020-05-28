@@ -12,7 +12,7 @@ and a little fact proper to the bot.  ;-)
 
 1°) Where to find the app ?
 
-    --->    Download it from here: ''   <-----------------------     /!\ HEROKU /!\
+    --->    Download it from here: https://decepticon-pybot.herokuapp.com/
 
 
 
