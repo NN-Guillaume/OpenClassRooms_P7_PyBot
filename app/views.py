@@ -13,55 +13,24 @@ def api():
 
     query = request.form["query"]
 
-    # ---------------------------------------------------------------------------------
     message = Parser(query)
     message.ponctuation()
     message.list_it()
     cleanMessage = message.delete_common_words()
-    # ---------------------------------------------------------------------------------
 
-    rep = Geo(query)
-    # appel de la fonction
-    rep.get_coordonnees()
-    # recherche des coordonnées GPS
-    coordonnees = rep.get_coordonnees()
-    # affichage des coordonnées GPS
-    print(coordonnees[0], coordonnees[1])
-    # ---------------------------------------------------------------------------------
+    rep = Geo()
+    coordonnees = rep.get_coordonnees(query)
+    print(rep.get_address(coordonnees))
+
     print(cleanMessage)
-    # ---------------------------------------------------------------------------------
-    wiki = Wiki(coordonnees[0], coordonnees[1])
-    summary = wiki.summary
+
+    wiki = Wiki()
+    page_id = wiki.get_page_id(coordonnees[0], coordonnees[1])
+    summary = wiki.get_summary(page_id)
 
     answer = botAnswer()
     bot = answer.goodAnswer()
     print(bot)
-
-    # print(answer) # affiche bien le code HTTP :-)
-
-    #-----------------------------------------------------------------------------------
-    #///////////////////////////////////////////////////////////////////////////////////
-    #-----------------------------------------------------------------------------------
-    """
-    answer = botAnswer()
-    
-    try:
-            result = requests.head("http://127.0.0.1:3020/")
-            print(result.status_code)
-            #
-            if result.status_code == 200:
-                # renvoie réponse +
-                return answer.goodAnswer()
-            else :
-                # renvoie réponse -
-                return answer.badAnswer()
-
-    except requests.ConnectionError:
-        print("failed to connect")
-    """
-    #-----------------------------------------------------------------------------------
-    #///////////////////////////////////////////////////////////////////////////////////
-    # ----------------------------------------------------------------------------------
 
     return jsonify(
         {
@@ -69,6 +38,5 @@ def api():
             "lng": coordonnees[1],
             "summary": summary,
             "answer": bot,
-            #"answer":botAnswer,
         }
     )
