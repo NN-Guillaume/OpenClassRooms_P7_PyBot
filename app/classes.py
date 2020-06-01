@@ -7,70 +7,75 @@ from app.config import *
 from requests import get
 from app.words_list import *
 
-"""
-def traitement(question):
-    coord = geocode(question)
-    return "Votre question est: " + question
-"""
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# A simple code made for understanding the concept of "tests"
+def addition(x, y):
+    resultat = x + y
+    return resultat
 
+
+class Calcul:
+    def __init__(self):
+        self.x = input()
+        self.y = input()
+
+    def addition(self):
+        resultat = self.x + self.y
+        return resultat
+    
+    
 # ------------------------------------------------------------- G O O G L E   C L A S S ----------------------------------------------------------------------------------
 
 
 class Geo:
-    def __init__(self, question):
-        self.latitude = float
-        self.longitude = float
-        self.address = str
-        self.question = question
+    def __init__(self):
 
-    def get_coordonnees(self):
+        self.key = key_value
+
+    def get_coordonnees(self, question):
         """Thanks to the user input Google will find the localisation"""
 
-        g = geocoder.google(
-            self.question, key=key_value
-        )
+        g = geocoder.google(question, key=key_value)
         data = g.json
-        self.latitude = data["lat"]
-        self.longitude = data["lng"]
-        return self.latitude, self.longitude
+        latitude = data["lat"]
+        longitude = data["lng"]
+        return latitude, longitude
 
     def get_address(self, coordonnees):
         """Find the wanted address thanks to the geographical coordinates"""
 
-        g = geocoder.google(
-            coordonnees, method="reverse", key=key_value
-        )
+        g = geocoder.google(coordonnees, method="reverse", key=key_value)
         data = g.json
-        self.address = data["address"]
-        return self.address
+        address = data["address"]
+        return address
 
 
 # -------------------------------------------------------------    W I K I    C L A S S    --------------------------------------------------------------------------------
 
 
 class Wiki:
-    def __init__(self, lat, lng):
-        self.lat_lng = "|".join([str(lat), str(lng)])
-        # lat_lng = str(lat) + "|" + str(lng)
-        self.page_id = self.__get_page_id()
-        self.summary = self.__get_summary()
+    def __init__(self):
 
-    def __get_page_id(self):
+        self.url = "https://fr.wikipedia.org/w/api.php"
+
+    def get_page_id(self, lat, lng):
         """request to wikipedia to check pages about a place near of google
         coordinates. Select the first result which mean the nearest place"""
 
+        lat_lng = "|".join([str(lat), str(lng)])
         parameters = {
             "action": "query",
             "list": "geosearch",
             "gsradius": 1000,
-            "gscoord": self.lat_lng,
+            "gscoord": lat_lng,
             "format": "json",
         }
-        response = get("https://fr.wikipedia.org/w/api.php", params=parameters)
+        response = requests.get(self.url, params=parameters)
         data = response.json()
-        return data["query"]["geosearch"][0]["pageid"]
+        page_id = data["query"]["geosearch"][0]["pageid"]
+        return page_id
 
-    def __get_summary(self):
+    def get_summary(self, id):
         """request to wikipedia. Extract a summary from the page"""
 
         parameters = {
@@ -81,11 +86,12 @@ class Wiki:
             "explaintext": "1",
             "indexpageids": 1,
             "exsentences": "5",
-            "pageids": self.page_id,
+            "pageids": id,
         }
-        response = get("https://fr.wikipedia.org/w/api.php", params=parameters)
+        response = requests.get(self.url, params=parameters)
         data = response.json()
-        return data["query"]["pages"][str(self.page_id)]["extract"]
+        summary = data["query"]["pages"][str(id)]["extract"]
+        return summary
 
 
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -129,7 +135,8 @@ class botAnswer:
     def proceedAnswer(self):
         return self.goodAnswer()
 
-
+    
+# the part below is an improvement for the bot answer (to continue)
 """
         try:
             result = requests.head("http://127.0.0.1:3020/")
@@ -145,23 +152,6 @@ class botAnswer:
         except requests.ConnectionError:
             print("failed to connect")
 """
-
-# création d'une méthode vérifiant la réponse HTTP ?
-
-# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def addition(x, y):
-    resultat = x + y
-    return resultat
-
-
-class Calcul:
-    def __init__(self):
-        self.x = input()
-        self.y = input()
-
-    def addition(self):
-        resultat = self.x + self.y
-        return resultat
 
 
 # ------------------------------------------------------------- P A R S E R   C L A S S ----------------------------------------------------------------------------------
