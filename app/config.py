@@ -1,3 +1,3 @@
 # config file
 
-key_value = 'AIzaSyDf-8PO-M4h0cgIXw1dGZ4NCt1xVUWvFbY'
+key_value = 'enter_your_key_here'
