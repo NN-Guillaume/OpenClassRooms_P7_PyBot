@@ -143,3 +143,23 @@ footer button:hover
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+@media screen and (max-width: 992px) {
+    .column {
+        width: 100%;
+    }
+
+    .column {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .bot {
+        width: 100%;
+    }
+
+    .wiki {
+        width: 100%;
+    }
+}
