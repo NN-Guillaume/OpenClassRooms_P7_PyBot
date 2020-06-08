@@ -1,3 +1,3 @@
 # config file
 
-key_value = ' '
+key_value = " "
