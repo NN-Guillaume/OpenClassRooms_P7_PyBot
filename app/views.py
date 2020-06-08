@@ -33,15 +33,15 @@ def api():
     wiki = Wiki()
     page_id = wiki.get_page_id(coordonnees[0], coordonnees[1])
     summary = wiki.get_summary(page_id)
-    """
+    
     answer = botAnswer()
     bot = answer.goodAnswer()
     print(bot)
-    """
+    
 ###################################################################################
 # KEEP THIS PART ! ! ! KEEP THIS PART ! ! ! KEEP THIS PART ! ! ! KEEP THIS PART ! ! !
 ###################################################################################
-    """
+    
     return jsonify(
         {
             "lat": coordonnees[0],
@@ -50,63 +50,7 @@ def api():
             "answer": bot,
         }
     )
-    """
+    
 ###################################################################################
 # KEEP THIS PART ! ! ! KEEP THIS PART ! ! ! KEEP THIS PART ! ! ! KEEP THIS PART ! ! !
 ###################################################################################
-
-    """
-    if coordonnees is not None:
-        print(rep.get_address(coordonnees))
-        wiki = Wiki()
-        page_id = wiki.get_page_id(coordonnees[0], coordonnees[1])
-        summary = wiki.get_summary(page_id)
-        return jsonify({"lat": coordonnees[0], "lng": coordonnees[1], "summary": summary})
-    else:
-        print("pas trouvé")
-    """
-###################################################################################
-    
-    if coordonnees is not None:
-            print(rep.get_address(coordonnees))
-
-            print(cleanMessage)
-
-            wiki = Wiki()
-            page_id = wiki.get_page_id(coordonnees[0], coordonnees[1])
-            summary = wiki.get_summary(page_id)
-
-            answer = botAnswer()
-            bot = answer.goodAnswer()
-            print(bot)
-
-            return jsonify(
-                        {
-                            "lat": coordonnees[0],
-                            "lng": coordonnees[1],
-                            "summary": summary,
-                            "answer": bot,
-                        }
-            )
-
-    elif coordonnees is None:
-            print(rep.get_address(coordonnees))
-
-            print(cleanMessage)
-
-            wiki = Wiki()
-            page_id = wiki.get_page_id(coordonnees[0], coordonnees[1])
-
-            summary = wiki.get_summary(page_id)
-            answer = botAnswer()
-            bot = answer.badAnswer()
-            print(bot)
-
-            return jsonify(
-                        {
-                            "lat": coordonnees[0],
-                            "lng": coordonnees[1],
-                            "summary": summary,
-                            "answer": bot,
-                        }
-            )
