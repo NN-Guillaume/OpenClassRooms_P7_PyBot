@@ -177,11 +177,11 @@ footer button:hover
 }
 
 @media screen and (max-width: 992px) {
-    .column {
+    .bot {
         width: 100%;
     }
 
-    .column {
+    .wiki {
         width: 100%;
     }
 }
