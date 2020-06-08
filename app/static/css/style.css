@@ -176,6 +176,32 @@ footer button:hover
     box-sizing: border-box;
 }
 
+.references
+{
+    display: inline-block;
+    margin-left: 680px;
+    position: relative;
+}
+
+.student
+{
+    display: block;
+    margin-bottom: 25px;
+    color: gray;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.link
+{
+    display: block;
+    margin-bottom: 25px;
+    margin-left: 50px;
+    color: aliceblue;
+    font-size: 30px;
+    font-weight: 500;
+}
+
 @media screen and (max-width: 992px) {
     .bot {
         width: 100%;
@@ -183,6 +209,14 @@ footer button:hover
 
     .wiki {
         width: 100%;
+    }
+
+    .textbox {
+        width:400px;
+    }
+
+    footer button {
+        display: inline-block;
     }
 }
 
@@ -194,4 +228,9 @@ footer button:hover
     .wiki {
         width: 100%;
     }
+
+    .textbox {
+        width:350px;
+    }
+}
 }
