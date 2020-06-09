@@ -21,7 +21,6 @@ def api():
     message = Parser(query)
     message.ponctuation()
     message.list_it()
-    print(message)
     cleanMessage = message.delete_common_words()
     print(cleanMessage)
 
