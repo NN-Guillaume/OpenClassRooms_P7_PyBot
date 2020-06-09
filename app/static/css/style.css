@@ -132,7 +132,7 @@ input{
 
 footer button
 {
-    /*position: fixed;*/
+    position: fixed;
     display: inline-block;
     margin-top: 5px;
     background:cornflowerblue;
