@@ -42,6 +42,24 @@ body
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+/* help */
+.present
+{
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    display: none;
+}
+/* help */
+.img-responsive :hover + .present
+{
+    display: block;
+}
+
+h1
+{
+    -webkit-text-stroke: 2px white;
+}
 
 #section
 {
@@ -114,6 +132,7 @@ input{
 
 footer button
 {
+    position: fixed;
     display: inline-block;
     margin-top: 5px;
     background:cornflowerblue;
@@ -132,10 +151,10 @@ footer button:hover
 
 #loading
 {
-    position: fixed;
+    /*position: fixed;*/
     display: none;
     float: left;
-    size: 800px;
+    size: 200px;
 }
 
 #loading
@@ -153,7 +172,7 @@ footer button:hover
 {
     display: inline-block;
     margin-left: 680px;
-    position: relative;
+    position: sticky;
 }
 
 .student
@@ -188,12 +207,14 @@ footer button:hover
         width:400px;
     }
 
-    footer button {
-        display: inline-block;
-    }
+    
 }
 
 @media screen and (max-width: 600px) {
+    body{
+        background-image: url("../images/decepticon_logo.jpg");
+    }
+
     .bot {
         width: 100%;
     }
