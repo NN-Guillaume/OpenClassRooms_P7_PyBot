@@ -8,7 +8,7 @@ class Parser:
     def ponctuation(self):
         """ Remove all punctuation """
 
-        PONCTUATION = ",;.:/!#=+<>()"
+        PONCTUATION = ",;.:/?!#=+<>()"
         for item in PONCTUATION:
             if item in self.input:
                 self.input = self.input.replace(item, " ")
@@ -27,7 +27,7 @@ class Parser:
 
         not_common_words = []
         for item in self.input:
-            if item not in STOPWORDS:
+            if item.lower() not in STOPWORDS:
                 not_common_words.append(item)
         self.input = " ".join(not_common_words)
         print(self.input)
@@ -35,7 +35,7 @@ class Parser:
 
         #------------------------------------------------------------------------
     def regul_express(self):
-        """prevent XSS"""
+        """can prevent from XSS loophole too"""
         #exemple
         #p = re.compile('(blue|white|red)')
         #p.sub('colour', 'blue socks and red shoes') # remplace les couleurs par le mot 'color'
