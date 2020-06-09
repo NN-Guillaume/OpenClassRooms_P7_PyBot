@@ -13,8 +13,6 @@ and a little funny fact proper to the bot.  ;-)
 1°) Where to find the app ?
 
     --->    Download it from here: https://github.com/NN-Guillaume/OpenClassRooms_P7_PyBot
-    --->    Consult the website here: https://decepticon-pybot.herokuapp.com/
-
 
 
 2°) How does the app works ?
