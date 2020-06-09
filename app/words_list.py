@@ -1,5 +1,4 @@
 STOPWORDS = [
-    [
         "a",
         "abord",
         "absolument",
@@ -605,6 +604,5 @@ STOPWORDS = [
         "étant",
         "été",
         "être",
-        "ô",
-    ]
+        "ô"
 ]
