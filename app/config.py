@@ -1,7 +1,7 @@
 import os
 
 
-if os.environ.get('GOOGLE_KEY') is None:
+if os.environ.get('key_value') is None:
     key_value = ' '
 else:
-    key_value = os.environ['GOOGLE_KEY']
+    key_value = os.environ['key_value']
