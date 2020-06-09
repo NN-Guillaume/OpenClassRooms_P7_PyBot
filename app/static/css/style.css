@@ -132,7 +132,7 @@ input{
 
 footer button
 {
-    position: fixed;
+    /*position: fixed;*/
     display: inline-block;
     margin-top: 5px;
     background:cornflowerblue;
@@ -157,26 +157,30 @@ footer button:hover
     size: 200px;
 }
 
-#loading
-{
-    display: none;
-}
-
 * {
     font-family: customFont;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
+#bottom :after
+{
+    content: " ";
+    float: none;
+    display: table;
+    clear: both;
+}
+
 .references
 {
     display: inline-block;
-    margin-left: 680px;
+    margin-left: 450px;
     position: sticky;
 }
 
 .student
 {
+    position: fixed;
     display: block;
     margin-bottom: 25px;
     color: gray;
@@ -186,9 +190,10 @@ footer button:hover
 
 .link
 {
+    position: fixed;
     display: block;
     margin-bottom: 25px;
-    margin-left: 50px;
+    margin-left: 250px;
     color: aliceblue;
     font-size: 30px;
     font-weight: 500;
@@ -206,8 +211,6 @@ footer button:hover
     .textbox {
         width:400px;
     }
-
-    
 }
 
 @media screen and (max-width: 600px) {
@@ -224,6 +227,11 @@ footer button:hover
     }
 
     .textbox {
-        width:350px;
+        width:330px;
+    }
+
+    .references a {
+        float: none;
+        width: 100%;
     }
 }
