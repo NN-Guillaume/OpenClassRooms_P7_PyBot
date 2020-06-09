@@ -32,9 +32,4 @@ class botAnswer:
             "Je pense que quelques heures en dégrisement te ferait le plus grand bien...",
         ]
         return random.choice(self.answer_list)
-
-    def proceedGoodAnswer(self):
-        return self.goodAnswer()
-
-    def proceedBadAnswer(self):
-        return self.badAnswer()
+    
