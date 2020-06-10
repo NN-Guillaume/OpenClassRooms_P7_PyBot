@@ -1,9 +1,11 @@
 from requests import get
 import requests
 
-class Wiki:
-    def __init__(self):
 
+class Wiki:
+    """manage the wikipedia API"""
+
+    def __init__(self):
         self.url = "https://fr.wikipedia.org/w/api.php"
 
     def get_page_id(self, lat, lng):

@@ -1,7 +1,10 @@
 from app.words_list import *
 import re
 
+
 class Parser:
+    """manage the user input and prevent XSS loophole"""
+
     def __init__(self, value):
         self.input = value
 
@@ -33,14 +36,15 @@ class Parser:
         print(self.input)
         return self.input
 
-        #------------------------------------------------------------------------
+        # ------------------------------------------------------------------------
+
     def regul_express(self):
         """can prevent from XSS loophole too"""
-        #exemple
-        #p = re.compile('(blue|white|red)')
-        #p.sub('colour', 'blue socks and red shoes') # remplace les couleurs par le mot 'color'
+        # exemple
+        # p = re.compile('(blue|white|red)')
+        # p.sub('colour', 'blue socks and red shoes') # remplace les couleurs par le mot 'color'
         #'colour socks and colour shoes'
 
         p = re.compile('|[|]|{|}|(|)|<|>|"|/|!|?|\\|.|\|')
-        p.sub(' ', self.input)
+        p.sub(" ", self.input)
         return self.input

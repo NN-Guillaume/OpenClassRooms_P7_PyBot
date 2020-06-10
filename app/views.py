@@ -24,10 +24,9 @@ def api():
     cleanMessage = message.delete_common_words()
     print(cleanMessage)
 
-
     rep = Geo()
     coordonnees = rep.get_coordonnees(query)
-    
+
     if coordonnees is not None:
         print(rep.get_address(coordonnees))
         wiki = Wiki()
@@ -36,10 +35,17 @@ def api():
         answer = botAnswer()
         bot = answer.goodAnswer()
         print(bot)
-        return jsonify({"lat": coordonnees[0], "lng": coordonnees[1], "summary": summary, "answer":bot,})
+        return jsonify(
+            {
+                "lat": coordonnees[0],
+                "lng": coordonnees[1],
+                "summary": summary,
+                "answer": bot,
+            }
+        )
     else:
         print("pas trouvé")
         answer = botAnswer()
         bot = answer.badAnswer()
         print(bot)
-        return jsonify({"answer":bot,})
+        return jsonify({"answer": bot,})

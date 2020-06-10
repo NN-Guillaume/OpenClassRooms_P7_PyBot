@@ -1,5 +1,6 @@
 import random
 
+
 class botAnswer:
     """ Create the answer of the bot """
 
@@ -32,4 +33,3 @@ class botAnswer:
             "Je pense que quelques heures en dégrisement te ferait le plus grand bien...",
         ]
         return random.choice(self.answer_list)
-    

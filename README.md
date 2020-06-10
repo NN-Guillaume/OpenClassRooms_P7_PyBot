@@ -24,11 +24,12 @@ and a little funny fact proper to the bot.  ;-)
 
 
 #-----------------------------------------------------------------------------------------------------------------------------#
-            /!\ WARNING /!\         /!\ WARNING /!\         /!\ WARNING /!\  #-----------------------------------------------------------------------------------------------------------------------------#
+            /!\ WARNING /!\         /!\ WARNING /!\         /!\ WARNING /!\
+#-----------------------------------------------------------------------------------------------------------------------------#
 
 Please, note that without your own Google API key, the app won't works at all !
 
-The background picture and the Police's logo use in the app are the property of    Paramount Pictures TM
+The background pictures (for phone and computer) and the Police's logo use in the app are the property of    Paramount Pictures TM
 
 #-----------------------------------------------------------------------------------------------------------------------------#
 
